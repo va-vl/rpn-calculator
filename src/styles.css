@@ -1,0 +1,183 @@
+:root {
+  --app-background-color: #4d7bbdff;
+  --app-background-image: linear-gradient(45deg, #4d7bbdff, #58e3ffff);
+
+  --calculator-background-color: #3f3058;
+  --display-background-color: #58714b;
+  --input-background-color: #4c6140;
+
+  --button-background-color: #ffefd3;
+  --button-background-color-hover: #e6d7be;
+  --button-background-color-active: #ccbfa9;
+  --clear-button-background-color: #621708;
+  --clear-button-background-color-hover: #581507;
+  --clear-button-background-color-active: #4e1206;
+  --delete-button-background-color: black;
+  --delete-button-background-color-hover: grey;
+  --delete-button-background-color-active: darkgrey;
+  --equals-button-background-color: #31572c;
+  --equals-button-background-color-hover: #2c4e28;
+  --equals-button-background-color-active: #274623;
+
+  --input-font-color: darkgreen;
+  --button-font-color: black;
+  --button-font-color-contrast: white;
+
+  --size-small: 5px;
+  --size-medium: 10px;
+  --size-large: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 14px;
+}
+
+.button {
+  font-weight: bold;
+  background-color: var(--button-background-color);
+  color: var(--button-font-color);
+  border: none;
+  border-radius: var(--size-small);
+  padding: var(--size-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+}
+
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  background-color: var(--button-background-color-hover);
+}
+
+.button:active {
+  background-color: var(--button-background-color-active);
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--app-background-color);
+  background-image: var(--app-background-image);
+}
+
+.calculator {
+  background-color: var(--calculator-background-color);
+  border-radius: var(--size-medium);
+  padding: var(--size-large);
+  box-shadow: var(--black-olive) 5px 5px 10px -5px;
+  max-width: 220px;
+}
+
+.display {
+  text-align: right;
+  margin-bottom: var(--size-medium);
+  border-radius: var(--size-small);
+  overflow: hidden;
+  font-family: monospace;
+  width: 100%;
+}
+
+.input {
+  font-size: 0.9em;
+  min-height: 2em;
+  background-color: var(--input-background-color);
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding: var(--size-small);
+  width: 100%;
+}
+
+.result {
+  font-size: 1.2em;
+  min-height: 1.5em;
+  background-color: var(--display-background-color);
+  padding: var(--size-small);
+}
+
+.keys {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  column-gap: 1.5em;
+}
+
+.keys_left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.25em;
+}
+
+.keys_right {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.25em;
+}
+
+.button__clear {
+  grid-column: span 2;
+  width: 100%;
+  background-color: var(--clear-button-background-color);
+  color: var(--button-font-color-contrast);
+}
+
+.button__clear:hover,
+.button__clear:focus {
+  background-color: var(--clear-button-background-color-hover);
+}
+
+.button__clear:active {
+  background-color: var(--clear-button-background-color-active);
+}
+
+.button__delete {
+  grid-column: span 2;
+  width: 100%;
+  color: var(--button-font-color-contrast);
+  background-color: var(--delete-button-background-color);
+}
+
+.button__delete:hover,
+.button__delete:focus {
+  background-color: var(--delete-button-background-color-hover);
+}
+
+.button__delete:active {
+  background-color: var(--delete-button-background-color-active);
+}
+
+.button__equals {
+  height: 100%;
+  grid-row: 2 / span 2;
+  grid-column: 4 / span 1;
+  color: var(--button-font-color-contrast);
+  background-color: var(--equals-button-background-color);
+}
+
+.button__equals:hover,
+.button__equals:focus {
+  background-color: var(--equals-button-background-color-hover);
+}
+
+.button__delete:active {
+  background-color: var(--equals-button-background-color-active);
+}
+
+.button__zero {
+  grid-column: span 2;
+  width: 100%;
+}
